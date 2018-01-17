@@ -25,29 +25,37 @@ public class myProjectServlet extends HttpServlet {
 	// Create
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-				System.out.println("POST was called");
+			request.getHeaderNames();
+			String responseText = "Data can be created using this method (POST)";
+			response.getWriter().append(responseText);
+			System.out.println("POST was called");
 	}			
 	
 	// read
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-	throws ServletException, IOException {
-		String payloadDataID;
-		payloadDataID = request.getHeader("Payload-Data");
-		String responseText = payloadDataID;
-		response.getWriter().append(responseText);
-		System.out.println("GET was called");
+			throws ServletException, IOException {
+			request.getHeaderNames();
+			String responseText = "GET is used to read information.";
+			response.getWriter().append(responseText);
+			System.out.println("GET was called");
 		
 	}
 	
 	// Update
 	protected void doPut(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-				System.out.println("PUT was called");
+			request.getHeaderNames();
+			String responseText = "Use this (PUT) to update information";
+			response.getWriter().append(responseText);
+			System.out.println("PUT was called");
 	}
 	
 	// Delete
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-				System.out.println("DELETE was called");
+			request.getAttributeNames();
+			String responseText = "Only use DELETE to remove the specified target";
+			response.getWriter().append(responseText);
+			System.out.println("DELETE was called");
 	}
 }
